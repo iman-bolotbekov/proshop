@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+  table {
+    @apply w-full;
+  }
+  thead {
+    @apply bg-gray-50 border-b-2 border-gray-200;
+  }
+  tbody {
+    @apply divide-y divide-gray-100;
+  }
+  tr {
+    @apply bg-white;
+  }
+  th {
+    @apply w-20 p-3 text-sm font-semibold tracking-wide text-left;
+  }
+  td {
+    @apply p-3 text-sm text-gray-700 whitespace-nowrap;
+  }
+}
+
+.title {
+  @apply text-left text-4xl font-medium uppercase;
+}
+
+.title-2 {
+  @apply text-3xl text-gray-700 font-medium;
+}
+
+.title-3 {
+  @apply text-lg text-gray-700 font-medium;
+}
+
+.subtitle {
+  @apply text-left text-2xl font-medium;
+}
+
+.input {
+  @apply bg-gray-100 focus:outline-none p-3 w-[100%];
+}
+
+.button {
+  @apply uppercase text-white bg-gray-800 p-3 px-4;
+}
+
+.button-sm {
+  @apply uppercase text-white bg-gray-800 p-2 px-3;
+}
+
+.button.disabled {
+  @apply bg-gray-500;
+}
+
+.input-box {
+  @apply flex flex-col space-y-2 mb-5 relative;
+}
+
+.form-box {
+  @apply max-w-2xl mx-auto pb-20 pt-10 px-10;
+}
+
+.disabled {
+  @apply text-gray-300 cursor-not-allowed;
+}
+
+.line {
+  @apply border-t border-t-gray-200 my-3;
+}
+
+.error {
+  @apply text-sm font-semibold text-red-500 absolute top-[4.5rem] left-3;
+}
+
+.alert-info {
+  @apply flex items-center border border-blue-300 text-blue-900 justify-start md:col-span-2 bg-blue-200 h-14 px-6;
+}
+
+.alert-warning {
+  @apply flex items-center border border-[#fbe8cd] text-[#7d5a29] justify-start md:col-span-2 bg-[#fcefdc] h-14 px-6;
+}
+
+.alert-success {
+  @apply flex items-center border border-green-300 text-green-900 justify-start md:col-span-2 bg-green-200 h-14 px-6;
+}
+
+.list-enter {
+  opacity: 0;
+}
+.list-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.list-exit {
+  opacity: 1;
+}
+.list-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
