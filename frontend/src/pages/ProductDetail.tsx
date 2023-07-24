@@ -129,7 +129,7 @@ const ProductDetail: React.FC = () => {
                   Add to Cart
                 </button>
 
-                {product?.countInStock && (
+                {product?.countInStock && product.countInStock > 0 && (
                   <Counter
                     increament={increamentQty}
                     decreament={decreamentQty}
