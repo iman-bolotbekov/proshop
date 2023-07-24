@@ -8,6 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # path('api/', include('base.urls')),
+    path('', TemplateView.as_view(template_name='index.html')),
     path('api/products/', include('base.urls.product_urls')),
     path('api/users/', include('base.urls.user_urls')),
     path('api/orders/', include('base.urls.order_urls')),
@@ -18,4 +19,3 @@ if settings.DEBUG:
         settings.MEDIA_URL,
         document_root=settings.MEDIA_ROOT,
     )
-    urlpatterns += [re_path(r'^.*', TemplateView.as_view(template_name='index.html'))]
