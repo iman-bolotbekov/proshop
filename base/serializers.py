@@ -63,7 +63,10 @@ class ProductSerializer(serializers.ModelSerializer):
                    'category', 'brand', 'image_url']
 
     def get_image_url(self, obj):
-        return self.context.get('request').build_absolute_uri(obj.image.url)
+        request = self.context.get('request')
+        if request is not None:
+            return request.build_absolute_uri(obj.image.url)
+        return obj.image.url
 
 
 class ProductDetailSerializer(serializers.ModelSerializer):
@@ -81,7 +84,10 @@ class ProductDetailSerializer(serializers.ModelSerializer):
         return serializer.data
 
     def get_image_url(self, obj):
-        return self.context.get('request').build_absolute_uri(obj.image.url)
+        request = self.context.get('request')
+        if request is not None:
+            return request.build_absolute_uri(obj.image.url)
+        return obj.image.url
 
 
 class ShippingAddressSerializer(serializers.ModelSerializer):
